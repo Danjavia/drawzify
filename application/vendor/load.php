@@ -7,7 +7,7 @@
 		 * @param  [type] $array [ array with class path names using underscore ( _ ) notation ]
 		 * @return [type]        [ no return ]
 		 */
-		public function __construct( $array ) {
+		public static function file ( $array ) {
 
 			if ( is_numeric ( $array ) )
 
@@ -15,12 +15,14 @@
 
 			if ( ! is_array( $array ) )
 
-				$classes = array( $array );
+				$array = array( $array );
+
+			$classes = $array;
 
 			foreach ( $classes as $class ) {
 
-				$path = str_replace( '_', '/', $class );
-				require_once( $path );
+				$path = str_replace( '.', '/', $class );
+				require_once( $path . '.php' );
 
 			}
 

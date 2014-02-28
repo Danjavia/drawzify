@@ -2,9 +2,9 @@
 
 	require_once 'application/vendor/load.php';
 
-	$constants = [ 'application/constants' ];
+	Load::file( [ 'application.constants' ] );
 
-	echo CONTROLLERS;
+	echo CONTROLLER;
 	$controllers;
 	$views;
 

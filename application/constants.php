@@ -1,5 +1,5 @@
 <?php
 
-	define( CONTROLLER, 'application/controllers' );
+	define( 'CONTROLLER', 'application/controllers' );
 
 ?>
