@@ -7,7 +7,7 @@
 		 * @param  [type] $array [ array with class path names using underscore ( _ ) notation ]
 		 * @return [type]        [ no return ]
 		 */
-		public function __construct( $array, $folder ) {
+		public function __construct( $array ) {
 
 			if ( is_numeric ( $array ) )
 
@@ -17,10 +17,10 @@
 
 				$classes = array( $array );
 
-			foreach ($classes as $class) {
+			foreach ( $classes as $class ) {
 
 				$path = str_replace( '_', '/', $class );
-				get_template_part( $path );
+				require_once( $path );
 
 			}
 
